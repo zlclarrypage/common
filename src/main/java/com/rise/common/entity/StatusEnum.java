@@ -1,9 +1,7 @@
 package com.rise.common.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 /**
  * @author 张牧之
@@ -15,7 +13,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 public enum StatusEnum {
-    SUCCESS(200,"请求成功");
+    SUCCESS(200,"请求成功"),
+    UPDATE_VERSION_ERROR(500,"记录不存在或版本不一致"),
+    NO_RECORD_ERROR(500,"记录不存在"),
+    DEL_ROUTE_ERROR(500,"路由删除失败"),
+    SAVE_ROUTE_ERROR(500,"路由保存失败");
 
     private int code;
     private String message;
